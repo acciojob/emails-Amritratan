@@ -4,9 +4,33 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Gmail extends Email {
 
-    int inboxCapacity; //maximum number of mails inbox can store
+public class Gmail extends Email {
+    public class Mail {
+        private Date date;
+        private String sender;
+        private String message;
+
+        public Mail(Date date, String sender, String message) {
+            this.date = date;
+            this.sender = sender;
+            this.message = message;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public String getSender() {
+            return sender;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+    }
+
+        int inboxCapacity; //maximum number of mails inbox can store
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
     private List<Mail> Inbox;
